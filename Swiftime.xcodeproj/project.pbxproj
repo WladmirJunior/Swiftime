@@ -3,27 +3,109 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		028EDD1507ED6B26CB51D69C /* Pods_Swiftime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D34880770A5CB74DF059D4 /* Pods_Swiftime.framework */; };
+		5BDE1C2A8BB5A28849079CF8 /* Pods_SwiftimeServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 735E96AF890C2708EB783C0E /* Pods_SwiftimeServices.framework */; };
+		709D9B915A9D75D3904B384D /* Pods_SwiftimeDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2DDE84B27247EDB0F9F9042 /* Pods_SwiftimeDomain.framework */; };
+		A4C149529333F069FB333F08 /* Pods_SwiftimeUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A50F83E85DA38ED69176D8 /* Pods_SwiftimeUI.framework */; };
 		A99B3AF12439097000183904 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99B3AF02439097000183904 /* AppDelegate.swift */; };
-		A99B3AF32439097000183904 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99B3AF22439097000183904 /* SceneDelegate.swift */; };
-		A99B3AF52439097000183904 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99B3AF42439097000183904 /* ViewController.swift */; };
+		A99B3AF52439097000183904 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99B3AF42439097000183904 /* LoginViewController.swift */; };
 		A99B3AF82439097100183904 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99B3AF62439097100183904 /* Main.storyboard */; };
 		A99B3AFA2439097500183904 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A99B3AF92439097500183904 /* Assets.xcassets */; };
 		A99B3AFD2439097500183904 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99B3AFB2439097500183904 /* LaunchScreen.storyboard */; };
+		E46349B024390C27004C760D /* SwiftimeUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E46349A924390C27004C760D /* SwiftimeUI.framework */; };
+		E46349B124390C27004C760D /* SwiftimeUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E46349A924390C27004C760D /* SwiftimeUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E46349C224390C50004C760D /* SwiftimeDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E46349BB24390C50004C760D /* SwiftimeDomain.framework */; };
+		E46349C324390C50004C760D /* SwiftimeDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E46349BB24390C50004C760D /* SwiftimeDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E46349D324390C69004C760D /* SwiftimeServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E46349CC24390C69004C760D /* SwiftimeServices.framework */; };
+		E46349D424390C69004C760D /* SwiftimeServices.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E46349CC24390C69004C760D /* SwiftimeServices.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E4634A0624390D31004C760D /* SwiftimeUI.h in Headers */ = {isa = PBXBuildFile; fileRef = E4634A0424390D31004C760D /* SwiftimeUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E4634A0924390D46004C760D /* SwiftimeDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = E4634A0724390D46004C760D /* SwiftimeDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E4634A0D24390D50004C760D /* SwiftimeServices.h in Headers */ = {isa = PBXBuildFile; fileRef = E4634A0B24390D50004C760D /* SwiftimeServices.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E4634A1424390EE8004C760D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4634A1324390EE8004C760D /* UIKit.framework */; platformFilter = ios; };
+		E48BB85C24391B96002A7DDB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E48BB85B24391B96002A7DDB /* GoogleService-Info.plist */; };
+		E48BB85E24391E3B002A7DDB /* Pods_Swiftime.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CCC89D2F998D5F5C44A4A202 /* Pods_Swiftime.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E48BB86E24392EBC002A7DDB /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BB86D24392EBC002A7DDB /* TodayViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		E46349AE24390C27004C760D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A99B3AE52439097000183904 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E46349A824390C27004C760D;
+			remoteInfo = SwiftimeUI;
+		};
+		E46349C024390C50004C760D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A99B3AE52439097000183904 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E46349BA24390C50004C760D;
+			remoteInfo = SwiftimeDomain;
+		};
+		E46349D124390C69004C760D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A99B3AE52439097000183904 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E46349CB24390C69004C760D;
+			remoteInfo = SwiftimeServices;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E46349B224390C27004C760D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E48BB85E24391E3B002A7DDB /* Pods_Swiftime.framework in Embed Frameworks */,
+				E46349C324390C50004C760D /* SwiftimeDomain.framework in Embed Frameworks */,
+				E46349D424390C69004C760D /* SwiftimeServices.framework in Embed Frameworks */,
+				E46349B124390C27004C760D /* SwiftimeUI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		14A50F83E85DA38ED69176D8 /* Pods_SwiftimeUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftimeUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E9D57089FCCDD147EA516AA /* Pods-SwiftimeServices.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftimeServices.debug.xcconfig"; path = "Target Support Files/Pods-SwiftimeServices/Pods-SwiftimeServices.debug.xcconfig"; sourceTree = "<group>"; };
+		56D34880770A5CB74DF059D4 /* Pods_Swiftime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swiftime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E699F936372E44261C1FD72 /* Pods-SwiftimeUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftimeUI.release.xcconfig"; path = "Target Support Files/Pods-SwiftimeUI/Pods-SwiftimeUI.release.xcconfig"; sourceTree = "<group>"; };
+		735E96AF890C2708EB783C0E /* Pods_SwiftimeServices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftimeServices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		90891BF5FF4ADEF0C52885B5 /* Pods-Swiftime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftime.release.xcconfig"; path = "Target Support Files/Pods-Swiftime/Pods-Swiftime.release.xcconfig"; sourceTree = "<group>"; };
+		A2DDE84B27247EDB0F9F9042 /* Pods_SwiftimeDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftimeDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A99B3AED2439097000183904 /* Swiftime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swiftime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A99B3AF02439097000183904 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A99B3AF22439097000183904 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A99B3AF42439097000183904 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A99B3AF42439097000183904 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A99B3AF72439097100183904 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A99B3AF92439097500183904 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A99B3AFC2439097500183904 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A99B3AFE2439097500183904 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAA5C1EE4B64A8D734A69DA6 /* Pods-Swiftime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftime.debug.xcconfig"; path = "Target Support Files/Pods-Swiftime/Pods-Swiftime.debug.xcconfig"; sourceTree = "<group>"; };
+		C0B570DA69BD3363C00116A0 /* Pods-SwiftimeServices.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftimeServices.release.xcconfig"; path = "Target Support Files/Pods-SwiftimeServices/Pods-SwiftimeServices.release.xcconfig"; sourceTree = "<group>"; };
+		CCC89D2F998D5F5C44A4A202 /* Pods_Swiftime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swiftime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD4D30894B50B4DDD96D4685 /* Pods-SwiftimeUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftimeUI.debug.xcconfig"; path = "Target Support Files/Pods-SwiftimeUI/Pods-SwiftimeUI.debug.xcconfig"; sourceTree = "<group>"; };
+		D1F4F7116A043B564F0D0F57 /* Pods-SwiftimeDomain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftimeDomain.release.xcconfig"; path = "Target Support Files/Pods-SwiftimeDomain/Pods-SwiftimeDomain.release.xcconfig"; sourceTree = "<group>"; };
+		DD58181C13B16A7D11523A4A /* Pods-SwiftimeDomain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftimeDomain.debug.xcconfig"; path = "Target Support Files/Pods-SwiftimeDomain/Pods-SwiftimeDomain.debug.xcconfig"; sourceTree = "<group>"; };
+		E46349A924390C27004C760D /* SwiftimeUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftimeUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E46349BB24390C50004C760D /* SwiftimeDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftimeDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E46349CC24390C69004C760D /* SwiftimeServices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftimeServices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4634A0324390D31004C760D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4634A0424390D31004C760D /* SwiftimeUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftimeUI.h; sourceTree = "<group>"; };
+		E4634A0724390D46004C760D /* SwiftimeDomain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftimeDomain.h; sourceTree = "<group>"; };
+		E4634A0824390D46004C760D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4634A0B24390D50004C760D /* SwiftimeServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftimeServices.h; sourceTree = "<group>"; };
+		E4634A0C24390D50004C760D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4634A1324390EE8004C760D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E48BB85B24391B96002A7DDB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E48BB86224391F3B002A7DDB /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E48BB86D24392EBC002A7DDB /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +113,67 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E46349C224390C50004C760D /* SwiftimeDomain.framework in Frameworks */,
+				E46349D324390C69004C760D /* SwiftimeServices.framework in Frameworks */,
+				E46349B024390C27004C760D /* SwiftimeUI.framework in Frameworks */,
+				028EDD1507ED6B26CB51D69C /* Pods_Swiftime.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E46349A624390C27004C760D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4634A1424390EE8004C760D /* UIKit.framework in Frameworks */,
+				A4C149529333F069FB333F08 /* Pods_SwiftimeUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E46349B824390C50004C760D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				709D9B915A9D75D3904B384D /* Pods_SwiftimeDomain.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E46349C924390C69004C760D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BDE1C2A8BB5A28849079CF8 /* Pods_SwiftimeServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45F99EA24C0E5CA8873B5FCA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AAA5C1EE4B64A8D734A69DA6 /* Pods-Swiftime.debug.xcconfig */,
+				90891BF5FF4ADEF0C52885B5 /* Pods-Swiftime.release.xcconfig */,
+				DD58181C13B16A7D11523A4A /* Pods-SwiftimeDomain.debug.xcconfig */,
+				D1F4F7116A043B564F0D0F57 /* Pods-SwiftimeDomain.release.xcconfig */,
+				4E9D57089FCCDD147EA516AA /* Pods-SwiftimeServices.debug.xcconfig */,
+				C0B570DA69BD3363C00116A0 /* Pods-SwiftimeServices.release.xcconfig */,
+				CD4D30894B50B4DDD96D4685 /* Pods-SwiftimeUI.debug.xcconfig */,
+				6E699F936372E44261C1FD72 /* Pods-SwiftimeUI.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A99B3AE42439097000183904 = {
 			isa = PBXGroup;
 			children = (
 				A99B3AEF2439097000183904 /* Swiftime */,
+				E46349AA24390C27004C760D /* SwiftimeUI */,
+				E46349BC24390C50004C760D /* SwiftimeDomain */,
+				E46349CD24390C69004C760D /* SwiftimeServices */,
 				A99B3AEE2439097000183904 /* Products */,
+				E4634A1224390EE7004C760D /* Frameworks */,
+				45F99EA24C0E5CA8873B5FCA /* Pods */,
+				E48BB865243920CB002A7DDB /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -49,6 +181,9 @@
 			isa = PBXGroup;
 			children = (
 				A99B3AED2439097000183904 /* Swiftime.app */,
+				E46349A924390C27004C760D /* SwiftimeUI.framework */,
+				E46349BB24390C50004C760D /* SwiftimeDomain.framework */,
+				E46349CC24390C69004C760D /* SwiftimeServices.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,36 +191,248 @@
 		A99B3AEF2439097000183904 /* Swiftime */ = {
 			isa = PBXGroup;
 			children = (
+				E4634A0F24390DD9004C760D /* Supporting Files */,
 				A99B3AF02439097000183904 /* AppDelegate.swift */,
-				A99B3AF22439097000183904 /* SceneDelegate.swift */,
-				A99B3AF42439097000183904 /* ViewController.swift */,
-				A99B3AF62439097100183904 /* Main.storyboard */,
-				A99B3AF92439097500183904 /* Assets.xcassets */,
-				A99B3AFB2439097500183904 /* LaunchScreen.storyboard */,
-				A99B3AFE2439097500183904 /* Info.plist */,
 			);
 			path = Swiftime;
 			sourceTree = "<group>";
 		};
+		E46349AA24390C27004C760D /* SwiftimeUI */ = {
+			isa = PBXGroup;
+			children = (
+				E4634A1024390DEF004C760D /* UI */,
+				E4634A1124390E09004C760D /* Resources */,
+				E46349D824390C6F004C760D /* Supporting Files */,
+			);
+			path = SwiftimeUI;
+			sourceTree = "<group>";
+		};
+		E46349BC24390C50004C760D /* SwiftimeDomain */ = {
+			isa = PBXGroup;
+			children = (
+				E4634A0124390CCB004C760D /* Supporting Files */,
+			);
+			path = SwiftimeDomain;
+			sourceTree = "<group>";
+		};
+		E46349CD24390C69004C760D /* SwiftimeServices */ = {
+			isa = PBXGroup;
+			children = (
+				E4634A0224390CD4004C760D /* Supporting Files */,
+			);
+			path = SwiftimeServices;
+			sourceTree = "<group>";
+		};
+		E46349D824390C6F004C760D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E4634A0324390D31004C760D /* Info.plist */,
+				E4634A0424390D31004C760D /* SwiftimeUI.h */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E4634A0124390CCB004C760D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E4634A0824390D46004C760D /* Info.plist */,
+				E4634A0724390D46004C760D /* SwiftimeDomain.h */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E4634A0224390CD4004C760D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E4634A0C24390D50004C760D /* Info.plist */,
+				E4634A0B24390D50004C760D /* SwiftimeServices.h */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E4634A0F24390DD9004C760D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A99B3AFB2439097500183904 /* LaunchScreen.storyboard */,
+				A99B3AFE2439097500183904 /* Info.plist */,
+				E48BB85B24391B96002A7DDB /* GoogleService-Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E4634A1024390DEF004C760D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E48BB86B243924C4002A7DDB /* Home */,
+				E48BB86A243924BD002A7DDB /* Login */,
+				A99B3AF62439097100183904 /* Main.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		E4634A1124390E09004C760D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A99B3AF92439097500183904 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E4634A1224390EE7004C760D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E48BB86224391F3B002A7DDB /* GTMSessionFetcher.framework */,
+				E4634A1324390EE8004C760D /* UIKit.framework */,
+				56D34880770A5CB74DF059D4 /* Pods_Swiftime.framework */,
+				A2DDE84B27247EDB0F9F9042 /* Pods_SwiftimeDomain.framework */,
+				735E96AF890C2708EB783C0E /* Pods_SwiftimeServices.framework */,
+				14A50F83E85DA38ED69176D8 /* Pods_SwiftimeUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E48BB865243920CB002A7DDB /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				CCC89D2F998D5F5C44A4A202 /* Pods_Swiftime.framework */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		E48BB86A243924BD002A7DDB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A99B3AF42439097000183904 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		E48BB86B243924C4002A7DDB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E48BB86C24392E79002A7DDB /* Today */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E48BB86C24392E79002A7DDB /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				E48BB86D24392EBC002A7DDB /* TodayViewController.swift */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E46349A424390C27004C760D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4634A0624390D31004C760D /* SwiftimeUI.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E46349B624390C50004C760D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4634A0924390D46004C760D /* SwiftimeDomain.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E46349C724390C69004C760D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4634A0D24390D50004C760D /* SwiftimeServices.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		A99B3AEC2439097000183904 /* Swiftime */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A99B3B012439097500183904 /* Build configuration list for PBXNativeTarget "Swiftime" */;
 			buildPhases = (
+				0421AB60E043DAC2AC3E43E4 /* [CP] Check Pods Manifest.lock */,
 				A99B3AE92439097000183904 /* Sources */,
 				A99B3AEA2439097000183904 /* Frameworks */,
 				A99B3AEB2439097000183904 /* Resources */,
+				E46349B224390C27004C760D /* Embed Frameworks */,
+				D94C76CE2A8A2B81E7A3AB4D /* [CP] Copy Pods Resources */,
+				B3EF32ABB99507EC6A74AAF1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E46349AF24390C27004C760D /* PBXTargetDependency */,
+				E46349C124390C50004C760D /* PBXTargetDependency */,
+				E46349D224390C69004C760D /* PBXTargetDependency */,
 			);
 			name = Swiftime;
 			productName = Swiftime;
 			productReference = A99B3AED2439097000183904 /* Swiftime.app */;
 			productType = "com.apple.product-type.application";
+		};
+		E46349A824390C27004C760D /* SwiftimeUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E46349B524390C27004C760D /* Build configuration list for PBXNativeTarget "SwiftimeUI" */;
+			buildPhases = (
+				78766F0ADB6ED0C6E8814B17 /* [CP] Check Pods Manifest.lock */,
+				E46349A424390C27004C760D /* Headers */,
+				E46349A524390C27004C760D /* Sources */,
+				E46349A624390C27004C760D /* Frameworks */,
+				E46349A724390C27004C760D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftimeUI;
+			productName = SwiftimeUI;
+			productReference = E46349A924390C27004C760D /* SwiftimeUI.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E46349BA24390C50004C760D /* SwiftimeDomain */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E46349C424390C50004C760D /* Build configuration list for PBXNativeTarget "SwiftimeDomain" */;
+			buildPhases = (
+				9F99BB6E27050C1E3D1057AD /* [CP] Check Pods Manifest.lock */,
+				E46349B624390C50004C760D /* Headers */,
+				E46349B724390C50004C760D /* Sources */,
+				E46349B824390C50004C760D /* Frameworks */,
+				E46349B924390C50004C760D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftimeDomain;
+			productName = SwiftimeDomain;
+			productReference = E46349BB24390C50004C760D /* SwiftimeDomain.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E46349CB24390C69004C760D /* SwiftimeServices */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E46349D524390C69004C760D /* Build configuration list for PBXNativeTarget "SwiftimeServices" */;
+			buildPhases = (
+				2FA55FAD1087A0B8C4250669 /* [CP] Check Pods Manifest.lock */,
+				E46349C724390C69004C760D /* Headers */,
+				E46349C824390C69004C760D /* Sources */,
+				E46349C924390C69004C760D /* Frameworks */,
+				E46349CA24390C69004C760D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftimeServices;
+			productName = SwiftimeServices;
+			productReference = E46349CC24390C69004C760D /* SwiftimeServices.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -99,6 +446,16 @@
 				TargetAttributes = {
 					A99B3AEC2439097000183904 = {
 						CreatedOnToolsVersion = 11.3;
+					};
+					E46349A824390C27004C760D = {
+						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
+					};
+					E46349BA24390C50004C760D = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					E46349CB24390C69004C760D = {
+						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
 			};
@@ -116,6 +473,9 @@
 			projectRoot = "";
 			targets = (
 				A99B3AEC2439097000183904 /* Swiftime */,
+				E46349A824390C27004C760D /* SwiftimeUI */,
+				E46349BA24390C50004C760D /* SwiftimeDomain */,
+				E46349CB24390C69004C760D /* SwiftimeServices */,
 			);
 		};
 /* End PBXProject section */
@@ -126,25 +486,211 @@
 			buildActionMask = 2147483647;
 			files = (
 				A99B3AFD2439097500183904 /* LaunchScreen.storyboard in Resources */,
+				E48BB85C24391B96002A7DDB /* GoogleService-Info.plist in Resources */,
 				A99B3AFA2439097500183904 /* Assets.xcassets in Resources */,
 				A99B3AF82439097100183904 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E46349A724390C27004C760D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E46349B924390C50004C760D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E46349CA24390C69004C760D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0421AB60E043DAC2AC3E43E4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Swiftime-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2FA55FAD1087A0B8C4250669 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwiftimeServices-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78766F0ADB6ED0C6E8814B17 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwiftimeUI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F99BB6E27050C1E3D1057AD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwiftimeDomain-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3EF32ABB99507EC6A74AAF1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Swiftime/Pods-Swiftime-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Swiftime/Pods-Swiftime-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Swiftime/Pods-Swiftime-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D94C76CE2A8A2B81E7A3AB4D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Swiftime/Pods-Swiftime-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Swiftime/Pods-Swiftime-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Swiftime/Pods-Swiftime-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A99B3AE92439097000183904 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A99B3AF52439097000183904 /* ViewController.swift in Sources */,
+				A99B3AF52439097000183904 /* LoginViewController.swift in Sources */,
 				A99B3AF12439097000183904 /* AppDelegate.swift in Sources */,
-				A99B3AF32439097000183904 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E46349A524390C27004C760D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E48BB86E24392EBC002A7DDB /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E46349B724390C50004C760D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E46349C824390C69004C760D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E46349AF24390C27004C760D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E46349A824390C27004C760D /* SwiftimeUI */;
+			targetProxy = E46349AE24390C27004C760D /* PBXContainerItemProxy */;
+		};
+		E46349C124390C50004C760D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E46349BA24390C50004C760D /* SwiftimeDomain */;
+			targetProxy = E46349C024390C50004C760D /* PBXContainerItemProxy */;
+		};
+		E46349D224390C69004C760D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E46349CB24390C69004C760D /* SwiftimeServices */;
+			targetProxy = E46349D124390C69004C760D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A99B3AF62439097100183904 /* Main.storyboard */ = {
@@ -282,11 +828,14 @@
 		};
 		A99B3B022439097500183904 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAA5C1EE4B64A8D734A69DA6 /* Pods-Swiftime.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4F3Z7B359Q;
-				INFOPLIST_FILE = Swiftime/Info.plist;
+				INFOPLIST_FILE = "Swiftime/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,11 +849,14 @@
 		};
 		A99B3B032439097500183904 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90891BF5FF4ADEF0C52885B5 /* Pods-Swiftime.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4F3Z7B359Q;
-				INFOPLIST_FILE = Swiftime/Info.plist;
+				INFOPLIST_FILE = "Swiftime/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -313,6 +865,189 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E46349B324390C27004C760D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD4D30894B50B4DDD96D4685 /* Pods-SwiftimeUI.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 4F3Z7B359Q;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "SwiftimeUI/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wlad.Swiftime.SwiftimeUI;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E46349B424390C27004C760D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E699F936372E44261C1FD72 /* Pods-SwiftimeUI.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 4F3Z7B359Q;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "SwiftimeUI/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wlad.Swiftime.SwiftimeUI;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E46349C524390C50004C760D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD58181C13B16A7D11523A4A /* Pods-SwiftimeDomain.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 4F3Z7B359Q;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "SwiftimeDomain/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wlad.Swiftime.SwiftimeDomain;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E46349C624390C50004C760D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1F4F7116A043B564F0D0F57 /* Pods-SwiftimeDomain.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 4F3Z7B359Q;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "SwiftimeDomain/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wlad.Swiftime.SwiftimeDomain;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E46349D624390C69004C760D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E9D57089FCCDD147EA516AA /* Pods-SwiftimeServices.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 4F3Z7B359Q;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "SwiftimeServices/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wlad.Swiftime.SwiftimeServices;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E46349D724390C69004C760D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0B570DA69BD3363C00116A0 /* Pods-SwiftimeServices.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 4F3Z7B359Q;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "SwiftimeServices/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wlad.Swiftime.SwiftimeServices;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -333,6 +1068,33 @@
 			buildConfigurations = (
 				A99B3B022439097500183904 /* Debug */,
 				A99B3B032439097500183904 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E46349B524390C27004C760D /* Build configuration list for PBXNativeTarget "SwiftimeUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E46349B324390C27004C760D /* Debug */,
+				E46349B424390C27004C760D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E46349C424390C50004C760D /* Build configuration list for PBXNativeTarget "SwiftimeDomain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E46349C524390C50004C760D /* Debug */,
+				E46349C624390C50004C760D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E46349D524390C69004C760D /* Build configuration list for PBXNativeTarget "SwiftimeServices" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E46349D624390C69004C760D /* Debug */,
+				E46349D724390C69004C760D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

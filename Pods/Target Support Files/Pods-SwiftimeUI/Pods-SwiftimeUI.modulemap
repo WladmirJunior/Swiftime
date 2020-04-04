@@ -1,0 +1,6 @@
+framework module Pods_SwiftimeUI {
+  umbrella header "Pods-SwiftimeUI-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module Pods_SwiftimeDomain {
+  umbrella header "Pods-SwiftimeDomain-umbrella.h"
+
+  export *
+  module * { export * }
+}
