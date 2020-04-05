@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B90CC3D0-0296-4794-8DFF-9F912B4D1CD4"
+            uuid = "061F22DC-CF79-4090-8C4E-FFE787DC2B60"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Swiftime/AppDelegate.swift"
+            filePath = "SwiftimeUI/UI/Login/LoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "loginTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

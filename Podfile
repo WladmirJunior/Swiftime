@@ -38,5 +38,9 @@ target 'SwiftimeUI' do
    use_frameworks!
 
   # Pods for SwiftimeUI
+  pod 'FirebaseUI/Auth'
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
+
 
 end

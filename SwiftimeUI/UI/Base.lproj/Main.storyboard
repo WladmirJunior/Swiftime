@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Swiftime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Swiftime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,9 +96,9 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18:00:27" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="913-fT-Cx6">
-                                        <rect key="frame" x="134" y="58" width="146.5" height="44.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18:00:27" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="913-fT-Cx6">
+                                        <rect key="frame" x="20" y="58" width="374" height="49"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="42"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -112,6 +112,8 @@
                                     <constraint firstItem="G3Y-NE-QqK" firstAttribute="centerX" secondItem="mhb-li-OFZ" secondAttribute="centerX" id="Q8d-Oz-MwW"/>
                                     <constraint firstAttribute="height" constant="160" id="WVH-fx-Woh"/>
                                     <constraint firstItem="G3Y-NE-QqK" firstAttribute="top" secondItem="mhb-li-OFZ" secondAttribute="top" constant="16" id="qeX-EI-pdJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="913-fT-Cx6" secondAttribute="trailing" constant="20" id="zpD-Kv-Roe"/>
+                                    <constraint firstItem="913-fT-Cx6" firstAttribute="leading" secondItem="mhb-li-OFZ" secondAttribute="leading" constant="20" id="zwI-BW-q6N"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZZ-tE-pJf">
