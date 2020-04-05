@@ -26,16 +26,12 @@ class LoginViewController: UIViewController {
     // MARK: - Actions
 
     @IBAction func loginTapped(_ sender: Any) {
-        
-        emailField.text = "wlad@gmail.com"
-        passwordField.text = "123456"
-        
-        guard let email = emailField.text, let password = passwordField.text else {
-            print("Fill all fields!")
+        guard emailField.text != "", passwordField.text != "" else {
+            showAlert(AndMessage: "Lembre-se de colocar seu email e sua senha para ter acesso ao Swiftime!")
             return
         }
         
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authDataResult, error in
+        Auth.auth().signIn(withEmail: emailField.text!, password: passwordField.text!) { [weak self] authDataResult, error in
             guard let authDataResult = authDataResult  else {
                 print(error!)
                 return
@@ -55,23 +51,6 @@ class LoginViewController: UIViewController {
                     self?.performSegue(withIdentifier: "login", sender: authDataResult.user.uid)
                 }
             }
-        }
-    }
-    
-    func createUser() {
-        guard let email = emailField.text, let password = passwordField.text else {
-            print("Fill all fields!")
-            return
-        }
-        
-        Auth.auth().createUser(withEmail: email, password: password) { authDataResult, error in
-            guard let authDataResult = authDataResult  else {
-                print(error!)
-                return
-            }
-            
-            print(authDataResult.user.uid)
-            print(authDataResult.user.email ?? "")
         }
     }
     

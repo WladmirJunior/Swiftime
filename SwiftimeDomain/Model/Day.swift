@@ -10,10 +10,18 @@ import Foundation
 
 public struct Day: Codable {
     public let isDoingTask: Bool
-    public let taksOfDay: [Task]
-    public let timeSpendInTasks: String
+    public let tasksOfDay: [Task]?
+    public let timeSpendInTasks: String?
     
-//    public init(isDoingTask: Bool, taksOfDay: ) {
-//        
-//    }
+    public init(isDoingTask: Bool, tasksOfDay: [Task]?, timeSpendInTasks: String?) {
+        self.isDoingTask = isDoingTask
+        self.tasksOfDay = tasksOfDay
+        self.timeSpendInTasks = timeSpendInTasks
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case isDoingTask = "isDoingTask"
+        case tasksOfDay = "tasks"
+        case timeSpendInTasks = "timeSpend"
+    }
 }

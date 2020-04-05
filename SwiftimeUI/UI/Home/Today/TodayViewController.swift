@@ -39,6 +39,10 @@ class TodayViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateClock), userInfo: nil, repeats: true)
+        createDayIfNotExist() { day in
+        
+        }
         getTasksOfDay()
     }
     
@@ -66,11 +70,31 @@ class TodayViewController: UIViewController {
     
     // MARK: - Private
     
-    private func getDoingTask() {
+    private func createDayIfNotExist(completion: @escaping (Day?) -> ()) {
         let tasksRef = db.collection("users").document(uid)
             .collection("days").document(Date().dateLikeId)
-        tasksRef.getDocument { documentSnapshot, error in
-            
+        
+        tasksRef.getDocument { (document, error) in
+            if let error = error {
+                print(error)
+                completion(nil)
+            } else {
+                if let document = document, document.exists {
+                    let result = Result {
+                        try document.data(as: Day.self)
+                    }
+                    switch result {
+                    case .success(let day): completion(day)
+                    case .failure(let error): print(error)
+                    }
+                } else {
+                    let day = Day(isDoingTask: false, tasksOfDay: nil, timeSpendInTasks: "00:00")
+                    do {
+                        try tasksRef.setData(from: day)
+                        completion(day)
+                    } catch let error { print(error) }
+                }
+            }
         }
     }
     
@@ -144,60 +168,5 @@ extension TodayViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = UITableViewCell()
         cell.textLabel?.text = items[indexPath.row].text
         return cell
-    }
-}
-
-extension Date {
-    public var datePTBR: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        dateFormatter.locale = Locale(identifier: "pt_BR")
-        return dateFormatter.string(from: self)
-    }
-    
-    public var dayWithMonth: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMMM 'de' yyyy"
-        dateFormatter.locale = Locale(identifier: "pt_BR")
-        return dateFormatter.string(from: self)
-    }
-    
-    public var dayOfWeek: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE"
-        dateFormatter.locale = Locale(identifier: "pt_BR")
-        return dateFormatter.string(from: self)
-    }
-    
-    public var timeWithSeconds: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm:ss"
-        dateFormatter.locale = Locale(identifier: "pt_BR")
-        return dateFormatter.string(from: self)
-    }
-    
-    public var time: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
-        dateFormatter.locale = Locale(identifier: "pt_BR")
-        return dateFormatter.string(from: self)
-    }
-    
-    public var dateLikeId: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yyyy"
-        dateFormatter.locale = Locale(identifier: "pt_BR")
-        return dateFormatter.string(from: self)
-    }
-}
-
-extension Decodable {
-  /// Initialize from JSON Dictionary. Return nil on failure
-    init?(dictionary value: [String:Any]) {
-        guard JSONSerialization.isValidJSONObject(value) else { return nil }
-        guard let jsonData = try? JSONSerialization.data(withJSONObject: value, options: []) else { return nil }
-
-        guard let newValue = try? JSONDecoder().decode(Self.self, from: jsonData) else { return nil }
-        self = newValue
     }
 }
