@@ -20,6 +20,9 @@ class TodayViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var stack: UIStackView!
+    @IBOutlet weak var timeInActivityLabel: UILabel!
+    @IBOutlet weak var timeInBreakLabel: UILabel!
     
     public var uid: String = ""
     
@@ -28,6 +31,8 @@ class TodayViewController: UIViewController {
     private var isCounting = false
     private var items: [Task] = []
     private var timer: Timer = Timer()
+    private var timeInActivity: String?
+    private var timeInBreak: String?
     let db = Firestore.firestore()
     
     override func viewDidLoad() {
@@ -39,29 +44,33 @@ class TodayViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateClock), userInfo: nil, repeats: true)
-        createDayIfNotExist() { day in
-        
+        createDayIfNotExist() { [weak self] day in
+            guard let day = day else { return }
+            self?.isCounting = day.isDoingTask
+            self?.timeInActivity = day.timeSpendInTasks
+            self?.timeInBreak = day.timeInBreak
+            self?.updateButtonStatus()
+            self?.showActivity()
         }
         getTasksOfDay()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
         timer.invalidate()
     }
     
     // MARK: - Actions
     
     @IBAction func actionTapped(_ sender: Any) {
-        if isCounting {
-            startButton.setTitle("Iniciar", for: .normal)
-            createPause()
-        } else {
-            startButton.setTitle("Pausar", for: .normal)
-            createStart()
-        }
-        
         isCounting = !isCounting
+        isCounting ? createStart() : createPause()
+        updateButtonStatus()
+        calcHoursInActivity()
     }
     
     @objc private func updateClock() {
@@ -88,13 +97,21 @@ class TodayViewController: UIViewController {
                     case .failure(let error): print(error)
                     }
                 } else {
-                    let day = Day(isDoingTask: false, tasksOfDay: nil, timeSpendInTasks: "00:00")
+                    let day = Day(isDoingTask: false, tasksOfDay: nil, timeSpendInTasks: "00:00", timeInBreak: "00:00")
                     do {
                         try tasksRef.setData(from: day)
                         completion(day)
                     } catch let error { print(error) }
                 }
             }
+        }
+    }
+    
+    private func updateButtonStatus() {
+        if isCounting {
+            startButton.setTitle("Pausar", for: .normal)
+        } else {
+            startButton.setTitle("Iniciar", for: .normal)
         }
     }
     
@@ -127,33 +144,93 @@ class TodayViewController: UIViewController {
         }
     }
     
+    private func showActivity() {
+        if let timeInActivity = timeInActivity, let timeInBreak = timeInBreak, timeInActivity != "00:00" && timeInBreak != "00:00" {
+            timeInActivityLabel.text = "Em atividade: \(timeInActivity)"
+            timeInBreakLabel.text = "Em pausa: \(timeInBreak)"
+            stack.isHidden = false
+        }
+    }
+    
+    private func calcHoursInActivity() {
+        if items.count > 0 {
+            let inBreakList = items.filter { $0.type == "P" }
+            if inBreakList.count > 0 {
+                
+                if let date = items[0].dateTime.toDate {
+                    let actual = inBreakList[0].dateTime.toDate!.timeIntervalSinceReferenceDate
+                   let oldTime = date.timeIntervalSinceReferenceDate
+                   
+                   let calculationTime = actual - oldTime
+                   let dateResult = Date(timeIntervalSinceReferenceDate: calculationTime)
+                   
+                   timeInActivity = dateResult.time
+                   timeInActivityLabel.text = "Em atividade: \(timeInActivity ?? "00:00")"
+                   timeInBreakLabel.text = "Em pausa: \(timeInBreak ?? "00:00")"
+                   self.stack.isHidden = false
+               }
+                
+                
+            } else {
+                if let date = items[0].dateTime.toDate {
+                    let actual = Date().timeIntervalSinceReferenceDate
+                    let oldTime = date.timeIntervalSinceReferenceDate
+                    
+                    let calculationTime = actual - oldTime
+                    let dateResult = Date(timeIntervalSinceReferenceDate: calculationTime)
+                    
+                    timeInActivity = dateResult.time
+                    timeInActivityLabel.text = "Em atividade: \(timeInActivity ?? "00:00")"
+                    timeInBreakLabel.text = "Em pausa: \(timeInBreak ?? "00:00")"
+                    self.stack.isHidden = false
+                }
+            }
+        }
+        
+//        let inActivityList = items.filter { $0.type == "S" }
+//        for task in inActivityList  {
+//
+//        }
+//
+//        let inBreakList = items.filter { $0.type == "P" }
+    }
+    
     private func createStart() {
-        let startText = "Atividade iniciada em \(Date().time)"
-        let task = Task(text: startText, dateTime: Date().datePTBR)
+        let startText = "Atividade em \(Date().time)"
+        let task = Task(text: startText, dateTime: Date().dateTime, type: "S")
         saveInFirestore(with: task)
     }
     
     private func createPause() {
-        let pauseText = "Atividade pausada em \(Date().time)"
-        let task = Task(text: pauseText, dateTime: Date().datePTBR)
+        let pauseText = "Pausa em \(Date().time)"
+        let task = Task(text: pauseText, dateTime: Date().dateTime, type: "P")
         saveInFirestore(with: task)
     }
     
     private func saveInFirestore(with task: Task) {
-        do {
-            try db.collection("users").document(uid)
-                .collection("days").document(Date().dateLikeId)
-                .collection("tasks").document().setData(from: task) { [weak self] error in
-                    guard let self = self else { return }
-                    if let error = error {
-                        print("Error adding document: \(error)")
-                    } else {
-                        self.items.append(task)
-                        self.tableView.reloadData()
-                    }
+        items.append(task)
+        tableView.reloadData()
+        
+        db.collection("users").document(uid)
+            .collection("days").document(Date().dateLikeId).setData(["isDoingTask": isCounting]) { [unowned self] error in
+            if let error = error {
+                self.showAlert(AndMessage: "Aconteceu alguma coisa ao salvar suas informações, tente novamente!")
+                print(error)
+                return
             }
-        } catch let error {
-            print("Error writing task to Firestore: \(error)")
+            do {
+                try self.db.collection("users").document(self.uid)
+                    .collection("days").document(Date().dateLikeId)
+                    .collection("tasks").document().setData(from: task) { [weak self] error in
+                        guard let self = self else { return }
+                        if let error = error {
+                            self.showAlert(AndMessage: "Aconteceu alguma coisa ao salvar suas informações, tente novamente!")
+                            print("Error adding document: \(error)")
+                        }
+                }
+            } catch let error {
+                print("Error writing task to Firestore: \(error)")
+            }
         }
     }
 }

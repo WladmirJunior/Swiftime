@@ -17,6 +17,8 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var activity: UIActivityIndicatorView!
     
     
     override func viewDidLoad() {
@@ -31,14 +33,13 @@ class LoginViewController: UIViewController {
             return
         }
         
+        loginButton.isHidden = true
+        activity.startAnimating()
         Auth.auth().signIn(withEmail: emailField.text!, password: passwordField.text!) { [weak self] authDataResult, error in
             guard let authDataResult = authDataResult  else {
                 print(error!)
                 return
             }
-            
-            self?.emailField.text = ""
-            self?.passwordField.text = ""
             
             let db = Firestore.firestore()
                         
@@ -48,7 +49,10 @@ class LoginViewController: UIViewController {
                     print("Error adding document: \(error)")
                 } else {
                     print("Document added with ID: \(authDataResult.user.uid)")
+                    self?.emailField.text = ""
+                    self?.passwordField.text = ""
                     self?.performSegue(withIdentifier: "login", sender: authDataResult.user.uid)
+                    self?.activity.stopAnimating()
                 }
             }
         }

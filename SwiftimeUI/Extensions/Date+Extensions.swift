@@ -9,9 +9,9 @@
 import Foundation
 
 extension Date {
-    public var datePTBR: String {
+    public var dateTime: String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         dateFormatter.locale = Locale(identifier: "pt_BR")
         return dateFormatter.string(from: self)
     }

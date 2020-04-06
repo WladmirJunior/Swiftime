@@ -12,16 +12,19 @@ public struct Day: Codable {
     public let isDoingTask: Bool
     public let tasksOfDay: [Task]?
     public let timeSpendInTasks: String?
+    public let timeInBreak: String?
     
-    public init(isDoingTask: Bool, tasksOfDay: [Task]?, timeSpendInTasks: String?) {
+    public init(isDoingTask: Bool, tasksOfDay: [Task]?, timeSpendInTasks: String?, timeInBreak: String?) {
         self.isDoingTask = isDoingTask
         self.tasksOfDay = tasksOfDay
         self.timeSpendInTasks = timeSpendInTasks
+        self.timeInBreak = timeInBreak
     }
     
     enum CodingKeys: String, CodingKey {
         case isDoingTask = "isDoingTask"
         case tasksOfDay = "tasks"
         case timeSpendInTasks = "timeSpend"
+        case timeInBreak
     }
 }

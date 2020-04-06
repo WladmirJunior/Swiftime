@@ -32,6 +32,7 @@
 		E4634A0924390D46004C760D /* SwiftimeDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = E4634A0724390D46004C760D /* SwiftimeDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E4634A0D24390D50004C760D /* SwiftimeServices.h in Headers */ = {isa = PBXBuildFile; fileRef = E4634A0B24390D50004C760D /* SwiftimeServices.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E4634A1424390EE8004C760D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4634A1324390EE8004C760D /* UIKit.framework */; platformFilter = ios; };
+		E46B39E3243B7FD20090938E /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B39E2243B7FD20090938E /* String+Extensions.swift */; };
 		E48BB85C24391B96002A7DDB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E48BB85B24391B96002A7DDB /* GoogleService-Info.plist */; };
 		E48BB85E24391E3B002A7DDB /* Pods_Swiftime.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CCC89D2F998D5F5C44A4A202 /* Pods_Swiftime.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E48BB86E24392EBC002A7DDB /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BB86D24392EBC002A7DDB /* TodayViewController.swift */; };
@@ -121,6 +122,7 @@
 		E4634A0B24390D50004C760D /* SwiftimeServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftimeServices.h; sourceTree = "<group>"; };
 		E4634A0C24390D50004C760D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4634A1324390EE8004C760D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E46B39E2243B7FD20090938E /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		E48BB85B24391B96002A7DDB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E48BB86224391F3B002A7DDB /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E48BB86D24392EBC002A7DDB /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 			children = (
 				E42F3507243A683600FD78C5 /* Date+Extensions.swift */,
 				E42F350C243A790B00FD78C5 /* UIViewController+Extensions.swift */,
+				E46B39E2243B7FD20090938E /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -717,6 +720,7 @@
 				E42F34F9243A1E3D00FD78C5 /* LoginViewController.swift in Sources */,
 				E42F350D243A790B00FD78C5 /* UIViewController+Extensions.swift in Sources */,
 				E48BB86E24392EBC002A7DDB /* TodayViewController.swift in Sources */,
+				E46B39E3243B7FD20090938E /* String+Extensions.swift in Sources */,
 				E42F3508243A683600FD78C5 /* Date+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

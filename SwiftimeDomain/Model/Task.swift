@@ -11,15 +11,18 @@ import Foundation
 public struct Task: Codable {
     public let text: String
     public let dateTime: String
+    public let type: String
     
-    public init(text: String, dateTime: String) {
+    public init(text: String, dateTime: String, type: String) {
         self.text = text
         self.dateTime = dateTime
+        self.type = type
     }
     
     
     enum CodingKeys: String, CodingKey {
         case text = "text"
         case dateTime = "dateTime"
+        case type
     }
 }
