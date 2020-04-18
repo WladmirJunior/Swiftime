@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseUI
-import FirebaseFirestore
 
 class LoginViewController: UIViewController {
     
@@ -20,14 +17,18 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var activity: UIActivityIndicatorView!
     
+    private let viewModel = LoginViewModel()
     
     override func viewDidLoad() {
-        FirebaseApp.configure()
+        
     }
     
     // MARK: - Actions
 
     @IBAction func loginTapped(_ sender: Any) {
+        emailField.text = "i@gmail.com"
+        passwordField.text = "123456"
+        
         guard emailField.text != "", passwordField.text != "" else {
             showAlert(AndMessage: "Lembre-se de colocar seu email e sua senha para ter acesso ao Swiftime!")
             return
@@ -35,25 +36,18 @@ class LoginViewController: UIViewController {
         
         loginButton.isHidden = true
         activity.startAnimating()
-        Auth.auth().signIn(withEmail: emailField.text!, password: passwordField.text!) { [weak self] authDataResult, error in
-            guard let authDataResult = authDataResult  else {
-                print(error!)
+        
+        viewModel.login(with: emailField.text!, andPassword: passwordField.text!) { [weak self] sucess, uid, error in
+            if error != nil {
+                self?.showAlert(AndMessage: "Tivemos algum problema para acessar sua conta 😕\nPor favor, tente novamente em alguns instantes!")
                 return
             }
             
-            let db = Firestore.firestore()
-                        
-            db.collection("users").document(authDataResult.user.uid)
-                .setData(["email": authDataResult.user.email!]) { (error) in
-                if let error = error {
-                    print("Error adding document: \(error)")
-                } else {
-                    print("Document added with ID: \(authDataResult.user.uid)")
-                    self?.emailField.text = ""
-                    self?.passwordField.text = ""
-                    self?.performSegue(withIdentifier: "login", sender: authDataResult.user.uid)
-                    self?.activity.stopAnimating()
-                }
+            if sucess, let uid = uid {
+                self?.emailField.text = ""
+                self?.passwordField.text = ""
+                self?.performSegue(withIdentifier: "login", sender: uid)
+                self?.activity.stopAnimating()
             }
         }
     }

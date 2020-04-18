@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseUI
 
 public class CreateAccountViewController: UIViewController {
     
@@ -16,6 +15,8 @@ public class CreateAccountViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passField: UITextField!
     @IBOutlet weak var confirmPassField: UITextField!
+    
+    private let viewModel = CreateAccountViewModel()
     
     public override func viewDidLoad() {
         
@@ -38,9 +39,8 @@ public class CreateAccountViewController: UIViewController {
             return
         }
         
-        Auth.auth().createUser(withEmail: emailField.text!, password: passField.text!) { authDataResult, error in
+        viewModel.createUser(with: emailField.text!, andPassword: passField.text!) { (sucess, error) in
             guard let error = error  else {
-                
                 DispatchQueue.main.async {
                     self.showAlert(withTitle: "Muito bem!!!", AndMessage: "Agora você parte do Swiftime!") { action in
                         self.dismiss(animated: true, completion: nil)
@@ -48,7 +48,6 @@ public class CreateAccountViewController: UIViewController {
                 }
                 return
             }
-            
             self.showAlert(AndMessage: "Tivemos algum problema para criar sua conta 😕\nPor favor, tente novamente em alguns instantes!")
             print(error)
         }

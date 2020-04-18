@@ -12,8 +12,6 @@
 		709D9B915A9D75D3904B384D /* Pods_SwiftimeDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2DDE84B27247EDB0F9F9042 /* Pods_SwiftimeDomain.framework */; };
 		A4C149529333F069FB333F08 /* Pods_SwiftimeUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A50F83E85DA38ED69176D8 /* Pods_SwiftimeUI.framework */; };
 		A99B3AF12439097000183904 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99B3AF02439097000183904 /* AppDelegate.swift */; };
-		A99B3AFA2439097500183904 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A99B3AF92439097500183904 /* Assets.xcassets */; };
-		A99B3AFD2439097500183904 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99B3AFB2439097500183904 /* LaunchScreen.storyboard */; };
 		E42F34F9243A1E3D00FD78C5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99B3AF42439097000183904 /* LoginViewController.swift */; };
 		E42F34FA243A20DE00FD78C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99B3AF62439097100183904 /* Main.storyboard */; };
 		E42F34FD243A505700FD78C5 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42F34FC243A505700FD78C5 /* Task.swift */; };
@@ -22,6 +20,14 @@
 		E42F3508243A683600FD78C5 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42F3507243A683600FD78C5 /* Date+Extensions.swift */; };
 		E42F350A243A760E00FD78C5 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42F3509243A760E00FD78C5 /* CreateAccountViewController.swift */; };
 		E42F350D243A790B00FD78C5 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42F350C243A790B00FD78C5 /* UIViewController+Extensions.swift */; };
+		E446A194244A965A00BC5EE9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E446A193244A965A00BC5EE9 /* LoginViewModel.swift */; };
+		E446A196244AA08600BC5EE9 /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E446A195244AA08600BC5EE9 /* CreateAccountViewModel.swift */; };
+		E446A198244AA23700BC5EE9 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E446A197244AA23700BC5EE9 /* TodayViewModel.swift */; };
+		E44E6802244493AA003A9EFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A99B3AF92439097500183904 /* Assets.xcassets */; };
+		E44E6803244493E5003A9EFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A99B3AF92439097500183904 /* Assets.xcassets */; };
+		E44E680424449476003A9EFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99B3AFB2439097500183904 /* LaunchScreen.storyboard */; };
+		E44E6807244494FC003A9EFA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44E6806244494FC003A9EFA /* SettingsViewController.swift */; };
+		E44E6808244498B8003A9EFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99B3AFB2439097500183904 /* LaunchScreen.storyboard */; };
 		E46349B024390C27004C760D /* SwiftimeUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E46349A924390C27004C760D /* SwiftimeUI.framework */; };
 		E46349B124390C27004C760D /* SwiftimeUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E46349A924390C27004C760D /* SwiftimeUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E46349C224390C50004C760D /* SwiftimeDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E46349BB24390C50004C760D /* SwiftimeDomain.framework */; };
@@ -112,6 +118,10 @@
 		E42F3507243A683600FD78C5 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		E42F3509243A760E00FD78C5 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		E42F350C243A790B00FD78C5 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		E446A193244A965A00BC5EE9 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		E446A195244AA08600BC5EE9 /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
+		E446A197244AA23700BC5EE9 /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
+		E44E6806244494FC003A9EFA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E46349A924390C27004C760D /* SwiftimeUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftimeUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46349BB24390C50004C760D /* SwiftimeDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftimeDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46349CC24390C69004C760D /* SwiftimeServices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftimeServices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,6 +247,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		E44E6805244494DD003A9EFA /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E44E6806244494FC003A9EFA /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		E46349AA24390C27004C760D /* SwiftimeUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,7 +363,9 @@
 			isa = PBXGroup;
 			children = (
 				A99B3AF42439097000183904 /* LoginViewController.swift */,
+				E446A193244A965A00BC5EE9 /* LoginViewModel.swift */,
 				E42F3509243A760E00FD78C5 /* CreateAccountViewController.swift */,
+				E446A195244AA08600BC5EE9 /* CreateAccountViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -353,6 +373,7 @@
 		E48BB86B243924C4002A7DDB /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E44E6805244494DD003A9EFA /* Settings */,
 				E48BB86C24392E79002A7DDB /* Today */,
 			);
 			path = Home;
@@ -362,6 +383,7 @@
 			isa = PBXGroup;
 			children = (
 				E48BB86D24392EBC002A7DDB /* TodayViewController.swift */,
+				E446A197244AA23700BC5EE9 /* TodayViewModel.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -531,9 +553,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A99B3AFD2439097500183904 /* LaunchScreen.storyboard in Resources */,
+				E44E6808244498B8003A9EFA /* LaunchScreen.storyboard in Resources */,
+				E44E6803244493E5003A9EFA /* Assets.xcassets in Resources */,
 				E48BB85C24391B96002A7DDB /* GoogleService-Info.plist in Resources */,
-				A99B3AFA2439097500183904 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,6 +563,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E44E680424449476003A9EFA /* LaunchScreen.storyboard in Resources */,
+				E44E6802244493AA003A9EFA /* Assets.xcassets in Resources */,
 				E42F34FA243A20DE00FD78C5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -718,9 +742,13 @@
 			files = (
 				E42F350A243A760E00FD78C5 /* CreateAccountViewController.swift in Sources */,
 				E42F34F9243A1E3D00FD78C5 /* LoginViewController.swift in Sources */,
+				E446A198244AA23700BC5EE9 /* TodayViewModel.swift in Sources */,
+				E44E6807244494FC003A9EFA /* SettingsViewController.swift in Sources */,
 				E42F350D243A790B00FD78C5 /* UIViewController+Extensions.swift in Sources */,
+				E446A194244A965A00BC5EE9 /* LoginViewModel.swift in Sources */,
 				E48BB86E24392EBC002A7DDB /* TodayViewController.swift in Sources */,
 				E46B39E3243B7FD20090938E /* String+Extensions.swift in Sources */,
+				E446A196244AA08600BC5EE9 /* CreateAccountViewModel.swift in Sources */,
 				E42F3508243A683600FD78C5 /* Date+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

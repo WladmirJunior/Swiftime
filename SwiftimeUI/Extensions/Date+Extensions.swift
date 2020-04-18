@@ -50,4 +50,11 @@ extension Date {
         dateFormatter.locale = Locale(identifier: "pt_BR")
         return dateFormatter.string(from: self)
     }
+    
+    public var timeFull: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mm a"
+        dateFormatter.locale = Locale(identifier: "pt_BR")
+        return dateFormatter.string(from: self)
+    }
 }
