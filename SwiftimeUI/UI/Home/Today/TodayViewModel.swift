@@ -11,14 +11,20 @@ import SwiftimeDomain
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
+public struct FirebaseConstants {
+    static let users = "users"
+    static let days = "days"
+    static let tasks = "tasks"
+}
+
 public class TodayViewModel {
     
     private let db = Firestore.firestore()
     public var items: [Task] = []
     
     public func createDayIfNotExist(_ uid: String, completion: @escaping (Day?) -> ()) {
-        let tasksRef = db.collection("users").document(uid)
-            .collection("days").document(Date().dateLikeId)
+        let tasksRef = db.collection(FirebaseConstants.users).document(uid)
+            .collection(FirebaseConstants.days).document(Date().dateLikeId)
         
         tasksRef.getDocument { (document, error) in
             if let error = error {
@@ -45,9 +51,9 @@ public class TodayViewModel {
     }
     
     public func getTasksOfDay(_ uid: String, completion: @escaping(Error?) -> Void) {
-        let tasksRef = db.collection("users").document(uid)
-            .collection("days").document(Date().dateLikeId)
-            .collection("tasks")
+        let tasksRef = db.collection(FirebaseConstants.users).document(uid)
+            .collection(FirebaseConstants.days).document(Date().dateLikeId)
+            .collection(FirebaseConstants.tasks)
         tasksRef.getDocuments { [weak self] (querySnapshot, error) in
             guard let self = self else { return }
             if let error = error {
@@ -64,7 +70,7 @@ public class TodayViewModel {
                     if let tasks = tasks {
                         self.items = tasks
                         
-                        completion(nil)                        
+                        completion(nil)
                     }
                 case .failure(let error): completion(error)
                 }
@@ -75,16 +81,16 @@ public class TodayViewModel {
     public func saveInFirestore(_ uid: String, _ isCounting: Bool, with task: Task, completion: @escaping(Error?) -> Void) {
         items.append(task)
         
-        db.collection("users").document(uid)
-            .collection("days").document(Date().dateLikeId).setData(["isDoingTask": isCounting]) { [unowned self] error in
+        db.collection(FirebaseConstants.users).document(uid)
+            .collection(FirebaseConstants.days).document(Date().dateLikeId).setData(["isDoingTask": isCounting]) { [unowned self] error in
             if let error = error {
                 completion(error)
                 return
             }
             do {
-                try self.db.collection("users").document(uid)
-                    .collection("days").document(Date().dateLikeId)
-                    .collection("tasks").document().setData(from: task) { [weak self] error in
+                try self.db.collection(FirebaseConstants.users).document(uid)
+                    .collection(FirebaseConstants.days).document(Date().dateLikeId)
+                    .collection(FirebaseConstants.tasks).document().setData(from: task) { error in
                         if let error = error {
                             completion(error)
                         }

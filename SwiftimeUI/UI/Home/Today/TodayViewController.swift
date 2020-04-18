@@ -53,8 +53,8 @@ class TodayViewController: UIViewController {
             self?.showActivity()
         }
         viewModel.getTasksOfDay(uid) { [weak self] error in
-            if let error = error {
-                
+            if let _ = error {
+                self?.showAlert(AndMessage: "Tivemos um problema para pegar suas informações 😕\nPor favor, tente novamente em alguns instantes!")
             }
             
             DispatchQueue.main.async {
@@ -75,7 +75,6 @@ class TodayViewController: UIViewController {
         isCounting = !isCounting
         isCounting ? createStart() : createPause()
         updateButtonStatus()
-//        calcHoursInActivity()
     }
     
     @objc private func updateClock() {
@@ -83,8 +82,6 @@ class TodayViewController: UIViewController {
     }
     
     // MARK: - Private
-    
-    
     
     private func updateButtonStatus() {
         if isCounting {
@@ -102,45 +99,6 @@ class TodayViewController: UIViewController {
         }
     }
     
-//    private func calcHoursInActivity() {
-//        if items.count > 0 {
-//            let inBreakList = items.filter { $0.type == "P" }
-//            if inBreakList.count > 0 {
-//
-//                if let date = items[0].dateTime.toDate {
-//
-//                    let diffDate = findDateDiff(time1Str: date.timeFull, time2Str: inBreakList[0].dateTime.toDate!.timeFull)
-//                    print(diffDate)
-////                    let actual = inBreakList[0].dateTime.toDate!.timeIntervalSinceReferenceDate
-////                   let oldTime = date.timeIntervalSinceReferenceDate
-////
-////                   let calculationTime = actual - oldTime
-////                   let dateResult = Date(timeIntervalSinceReferenceDate: calculationTime)
-////
-////                   timeInActivity = dateResult.time
-////                   timeInActivityLabel.text = "Em atividade: \(timeInActivity ?? "00:00")"
-////                   timeInBreakLabel.text = "Em pausa: \(timeInBreak ?? "00:00")"
-////                   self.stack.isHidden = false
-//               }
-//
-//
-//            } else {
-//                if let date = items[0].dateTime.toDate {
-//                    let actual = Date().timeIntervalSinceReferenceDate
-//                    let oldTime = date.timeIntervalSinceReferenceDate
-//
-//                    let calculationTime = actual - oldTime
-//                    let dateResult = Date(timeIntervalSinceReferenceDate: calculationTime)
-//
-//                    timeInActivity = dateResult.time
-//                    timeInActivityLabel.text = "Em atividade: \(timeInActivity ?? "00:00")"
-//                    timeInBreakLabel.text = "Em pausa: \(timeInBreak ?? "00:00")"
-//                    self.stack.isHidden = false
-//                }
-//            }
-//        }
-//    }
-    
     private func createStart() {
         let startText = "Atividade em \(Date().time)"
         let task = Task(text: startText, dateTime: Date().dateTime, type: "S")
@@ -156,12 +114,20 @@ class TodayViewController: UIViewController {
     private func saveTask(_ task: Task) {
         viewModel.saveInFirestore(uid, isCounting, with: task) { [weak self] error in
             if let error = error {
-                self?.showAlert(AndMessage: "Aconteceu alguma coisa ao salvar suas informações, tente novamente!")
+                self?.showAlert(AndMessage: "Tivemos um problema ao salvar suas informações, tente novamente!")
                 print(error)
                 return
             }
         }
-        self.tableView.reloadData()
+        tableView.reloadData()
+        scrollToBottom()
+    }
+    
+    func scrollToBottom(){
+        DispatchQueue.main.async {
+            let indexPath = IndexPath(row: self.viewModel.items.count - 1, section: 0)
+            self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        }
     }
 }
 

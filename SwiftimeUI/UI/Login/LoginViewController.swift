@@ -55,7 +55,9 @@ class LoginViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let navigation = segue.destination as? UINavigationController,
         let tabController = navigation.topViewController as? UITabBarController,
-        let viewController = tabController.viewControllers?[0] as? TodayViewController else { return }
+        let viewController = tabController.viewControllers?[0] as? TodayViewController,
+        let secondViewController = tabController.viewControllers?[1] as? HistoryViewController else { return }
         viewController.uid = sender as! String
+        secondViewController.uid = sender as! String
     }
 }

@@ -23,6 +23,8 @@
 		E446A194244A965A00BC5EE9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E446A193244A965A00BC5EE9 /* LoginViewModel.swift */; };
 		E446A196244AA08600BC5EE9 /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E446A195244AA08600BC5EE9 /* CreateAccountViewModel.swift */; };
 		E446A198244AA23700BC5EE9 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E446A197244AA23700BC5EE9 /* TodayViewModel.swift */; };
+		E446A19B244AAD5800BC5EE9 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E446A19A244AAD5800BC5EE9 /* HistoryViewController.swift */; };
+		E446A19D244AADA900BC5EE9 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E446A19C244AADA900BC5EE9 /* HistoryViewModel.swift */; };
 		E44E6802244493AA003A9EFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A99B3AF92439097500183904 /* Assets.xcassets */; };
 		E44E6803244493E5003A9EFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A99B3AF92439097500183904 /* Assets.xcassets */; };
 		E44E680424449476003A9EFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99B3AFB2439097500183904 /* LaunchScreen.storyboard */; };
@@ -121,6 +123,8 @@
 		E446A193244A965A00BC5EE9 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E446A195244AA08600BC5EE9 /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
 		E446A197244AA23700BC5EE9 /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
+		E446A19A244AAD5800BC5EE9 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		E446A19C244AADA900BC5EE9 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		E44E6806244494FC003A9EFA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E46349A924390C27004C760D /* SwiftimeUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftimeUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46349BB24390C50004C760D /* SwiftimeDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftimeDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,6 +249,15 @@
 				E46B39E2243B7FD20090938E /* String+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E446A199244AAD3F00BC5EE9 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				E446A19A244AAD5800BC5EE9 /* HistoryViewController.swift */,
+				E446A19C244AADA900BC5EE9 /* HistoryViewModel.swift */,
+			);
+			path = History;
 			sourceTree = "<group>";
 		};
 		E44E6805244494DD003A9EFA /* Settings */ = {
@@ -373,6 +386,7 @@
 		E48BB86B243924C4002A7DDB /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E446A199244AAD3F00BC5EE9 /* History */,
 				E44E6805244494DD003A9EFA /* Settings */,
 				E48BB86C24392E79002A7DDB /* Today */,
 			);
@@ -745,7 +759,9 @@
 				E446A198244AA23700BC5EE9 /* TodayViewModel.swift in Sources */,
 				E44E6807244494FC003A9EFA /* SettingsViewController.swift in Sources */,
 				E42F350D243A790B00FD78C5 /* UIViewController+Extensions.swift in Sources */,
+				E446A19B244AAD5800BC5EE9 /* HistoryViewController.swift in Sources */,
 				E446A194244A965A00BC5EE9 /* LoginViewModel.swift in Sources */,
+				E446A19D244AADA900BC5EE9 /* HistoryViewModel.swift in Sources */,
 				E48BB86E24392EBC002A7DDB /* TodayViewController.swift in Sources */,
 				E46B39E3243B7FD20090938E /* String+Extensions.swift in Sources */,
 				E446A196244AA08600BC5EE9 /* CreateAccountViewModel.swift in Sources */,

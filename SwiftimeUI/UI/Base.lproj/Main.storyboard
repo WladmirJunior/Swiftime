@@ -99,7 +99,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dSA-oO-ApS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1728" y="428"/>
+            <point key="canvasLocation" x="1728" y="1148"/>
         </scene>
         <!--Hoje-->
         <scene sceneID="IgP-yL-WAU">
@@ -285,7 +285,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="M9u-SC-glZ" kind="relationship" relationship="viewControllers" id="mej-zv-EwP"/>
-                        <segue destination="ask-Lc-zyK" kind="relationship" relationship="viewControllers" id="DYz-TD-0BS"/>
+                        <segue destination="8MO-za-1rs" kind="relationship" relationship="viewControllers" id="M0T-Vv-Sk8"/>
+                        <segue destination="ask-Lc-zyK" kind="relationship" relationship="viewControllers" id="Iun-II-sTj"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FxP-ze-SDX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -369,10 +370,87 @@
             </objects>
             <point key="canvasLocation" x="-1036" y="785"/>
         </scene>
+        <!--Histórico-->
+        <scene sceneID="zR0-GN-WOA">
+            <objects>
+                <viewController title="Histórico" interfaceStyle="dark" id="8MO-za-1rs" customClass="HistoryViewController" customModule="SwiftimeUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T0E-gy-xm9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZTj-oM-J9V">
+                                <rect key="frame" x="0.0" y="88" width="414" height="160"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sábado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Swk-by-sfh">
+                                        <rect key="frame" x="178.5" y="30" width="57.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 de Abril de 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3LN-9E-cRu">
+                                        <rect key="frame" x="139.5" y="50.5" width="135.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18:00:27" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJs-1E-OZu">
+                                        <rect key="frame" x="20" y="71" width="374" height="49"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="42"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="uJs-1E-OZu" firstAttribute="leading" secondItem="ZTj-oM-J9V" secondAttribute="leading" constant="20" id="5ob-Po-43N"/>
+                                    <constraint firstItem="Swk-by-sfh" firstAttribute="top" secondItem="ZTj-oM-J9V" secondAttribute="top" constant="30" id="ENh-sv-hb7"/>
+                                    <constraint firstItem="3LN-9E-cRu" firstAttribute="centerX" secondItem="ZTj-oM-J9V" secondAttribute="centerX" id="G5g-bP-fkr"/>
+                                    <constraint firstItem="Swk-by-sfh" firstAttribute="centerX" secondItem="ZTj-oM-J9V" secondAttribute="centerX" id="MMJ-2h-T2g"/>
+                                    <constraint firstAttribute="height" constant="160" id="VHc-Vg-V6V"/>
+                                    <constraint firstItem="uJs-1E-OZu" firstAttribute="top" secondItem="3LN-9E-cRu" secondAttribute="bottom" id="aSW-tT-Qv3"/>
+                                    <constraint firstAttribute="trailing" secondItem="uJs-1E-OZu" secondAttribute="trailing" constant="20" id="cCl-B9-MNv"/>
+                                    <constraint firstItem="3LN-9E-cRu" firstAttribute="top" secondItem="Swk-by-sfh" secondAttribute="bottom" id="eBW-As-5an"/>
+                                    <constraint firstItem="uJs-1E-OZu" firstAttribute="centerX" secondItem="ZTj-oM-J9V" secondAttribute="centerX" id="seb-bm-0OD"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rhv-TJ-fLq">
+                                <rect key="frame" x="0.0" y="248" width="414" height="565"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="8MO-za-1rs" id="jln-e0-aO2"/>
+                                    <outlet property="delegate" destination="8MO-za-1rs" id="mtx-JV-4uZ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rhv-TJ-fLq" firstAttribute="top" secondItem="ZTj-oM-J9V" secondAttribute="bottom" id="5dy-RC-zTm"/>
+                            <constraint firstItem="ZTj-oM-J9V" firstAttribute="leading" secondItem="e1C-kO-IsF" secondAttribute="leading" id="PgX-Jx-3UI"/>
+                            <constraint firstItem="rhv-TJ-fLq" firstAttribute="leading" secondItem="e1C-kO-IsF" secondAttribute="leading" id="bgF-Ia-vyJ"/>
+                            <constraint firstItem="ZTj-oM-J9V" firstAttribute="top" secondItem="e1C-kO-IsF" secondAttribute="top" id="hM4-ne-Jt4"/>
+                            <constraint firstItem="e1C-kO-IsF" firstAttribute="trailing" secondItem="rhv-TJ-fLq" secondAttribute="trailing" id="m7y-fE-wXY"/>
+                            <constraint firstItem="e1C-kO-IsF" firstAttribute="trailing" secondItem="ZTj-oM-J9V" secondAttribute="trailing" id="sab-d6-pvm"/>
+                            <constraint firstItem="e1C-kO-IsF" firstAttribute="bottom" secondItem="rhv-TJ-fLq" secondAttribute="bottom" id="zOe-lp-zu9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="e1C-kO-IsF"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Histórico" image="list.dash" catalog="system" id="P4E-t5-dkF"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="3LN-9E-cRu" id="u6G-8o-ftm"/>
+                        <outlet property="dayLabel" destination="Swk-by-sfh" id="drJ-o6-mpL"/>
+                        <outlet property="tableView" destination="rhv-TJ-fLq" id="Re5-PM-b5i"/>
+                        <outlet property="timeLabel" destination="uJs-1E-OZu" id="C4k-vo-EnI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="25K-Jq-9Xi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1728" y="400"/>
+        </scene>
     </scenes>
     <resources>
         <image name="clock" width="150" height="181"/>
         <image name="clock.fill" catalog="system" width="64" height="60"/>
+        <image name="list.dash" catalog="system" width="64" height="42"/>
         <image name="pencil" catalog="system" width="64" height="56"/>
         <image name="start" width="98" height="98"/>
     </resources>
