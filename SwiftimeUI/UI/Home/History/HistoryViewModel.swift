@@ -14,7 +14,7 @@ import FirebaseFirestoreSwift
 public class HistoryViewModel {
     
     private let db = Firestore.firestore()
-    public var items: [Task] = []
+    public var items: [Day] = []
     
     public func loadAllTasks(_ uid: String, completion: @escaping(Error?) -> Void) {
         let tasksRef = db.collection(FirebaseConstants.users).document(uid)
@@ -33,9 +33,7 @@ public class HistoryViewModel {
                 switch result {
                 case .success(let days):
                     if let days = days {
-//                        self.items = tasks
-                        print(days)
-                        
+                        self.items = days
                         completion(nil)
                     }
                 case .failure(let error): completion(error)

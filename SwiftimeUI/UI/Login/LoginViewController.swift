@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
     // MARK: - Actions
 
     @IBAction func loginTapped(_ sender: Any) {
-        emailField.text = "i@gmail.com"
+        emailField.text = "o@gmail.com"
         passwordField.text = "123456"
         
         guard emailField.text != "", passwordField.text != "" else {

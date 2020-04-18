@@ -134,14 +134,25 @@ class TodayViewController: UIViewController {
 extension TodayViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.items.count
+        if viewModel.items.count == 0 {
+            return 1
+        } else {
+            return viewModel.items.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = viewModel.items[indexPath.row].text
         cell.textLabel?.textColor = .white
         cell.backgroundColor = .black
+        cell.textLabel?.numberOfLines = 0
+        
+        if viewModel.items.count > 0 {
+            cell.textLabel?.text = viewModel.items[indexPath.row].text
+        } else {
+            cell.textLabel?.text = "Ainda não existe registo de atividades para hoje."
+        }
+        
         return cell
     }
 }

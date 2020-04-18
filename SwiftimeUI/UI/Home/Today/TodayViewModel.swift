@@ -40,7 +40,7 @@ public class TodayViewModel {
                     case .failure(let error): print(error)
                     }
                 } else {
-                    let day = Day(isDoingTask: false, tasksOfDay: nil, timeSpendInTasks: "00:00", timeInBreak: "00:00")
+                    let day = Day(isDoingTask: false, day: Date().dateLikeId, tasksOfDay: nil, timeSpendInTasks: "00:00", timeInBreak: "00:00")
                     do {
                         try tasksRef.setData(from: day)
                         completion(day)
@@ -51,27 +51,24 @@ public class TodayViewModel {
     }
     
     public func getTasksOfDay(_ uid: String, completion: @escaping(Error?) -> Void) {
+        self.items.removeAll()
         let tasksRef = db.collection(FirebaseConstants.users).document(uid)
             .collection(FirebaseConstants.days).document(Date().dateLikeId)
-            .collection(FirebaseConstants.tasks)
-        tasksRef.getDocuments { [weak self] (querySnapshot, error) in
+        tasksRef.getDocument { [weak self] (querySnapshot, error) in
             guard let self = self else { return }
             if let error = error {
                 print("Error getting documents: \(error)")
                 completion(error)
             } else {
                 let result = Result {
-                    try querySnapshot?.documents.compactMap {
-                        try $0.data(as: Task.self)
-                    }
+                    try querySnapshot?.data(as: Day.self)
                 }
                 switch result {
-                case .success(let tasks):
-                    if let tasks = tasks {
-                        self.items = tasks
-                        
-                        completion(nil)
+                case .success(let day):
+                    if let day = day, let task = day.tasksOfDay {
+                        self.items = task
                     }
+                    completion(nil)
                 case .failure(let error): completion(error)
                 }
             }
@@ -81,23 +78,17 @@ public class TodayViewModel {
     public func saveInFirestore(_ uid: String, _ isCounting: Bool, with task: Task, completion: @escaping(Error?) -> Void) {
         items.append(task)
         
-        db.collection(FirebaseConstants.users).document(uid)
-            .collection(FirebaseConstants.days).document(Date().dateLikeId).setData(["isDoingTask": isCounting]) { [unowned self] error in
+        let taskRef = db.collection(FirebaseConstants.users).document(uid).collection(FirebaseConstants.days).document(Date().dateLikeId)
+                
+        taskRef.updateData(["isDoingTask": isCounting,
+                            "day": Date().dateLikeId,
+                            "tasks": FieldValue.arrayUnion([["dateTime": task.dateTime,
+                                                             "text": task.text,
+                                                             "type": task.type]])
+                            ]) { error in
             if let error = error {
                 completion(error)
                 return
-            }
-            do {
-                try self.db.collection(FirebaseConstants.users).document(uid)
-                    .collection(FirebaseConstants.days).document(Date().dateLikeId)
-                    .collection(FirebaseConstants.tasks).document().setData(from: task) { error in
-                        if let error = error {
-                            completion(error)
-                        }
-                }
-            } catch let error {
-                completion(error)
-                print("Error writing task to Firestore: \(error)")
             }
         }
     }
